@@ -19,7 +19,7 @@
 \section{Crossentropy is just the likelihood}
 
 Let's assume $\mathbf{D} =  \left\{(X_i,Y_i), i=1,...,n \right\}$ our i.i.d observations such that :  
-Let's assume $ (y_1,...,y_n) $ an i.i.d sample draw from the TRUE distribution $\mathrm{P}$. We define the following for our classes $c$ with $c=1,...,K$  :
+$ (y_1,...,y_n) $ is an i.i.d sample draw from the TRUE distribution $\mathrm{P}$. We define the following for our classes $c$ with $c=1,...,K$  :
 
 \begin{equation}
 \begin{split}
@@ -57,7 +57,7 @@ Now that we understand the cross entropy as a mean to compare two distributions 
 
 \subsection{Evaluation of the lost}
 We suppose here that the categories are encoded as a one hot encoded vector, that is,
-a vector $c = [0,..,1,0,..,0]$ with one on the position corresponding to the right category of the observation and the zero otherwise. To relate to the previous section, we now have :
+a vector $c = [0,..,1,0,..,0]$ with one on the position corresponding to the right category of the observation and zero otherwise. To relate to the previous section, we now have :
 $$
 p_c = \left\{
     \begin{array}{ll}
@@ -66,7 +66,7 @@ p_c = \left\{
     \end{array}
 \right.
 $$
-We write ${L(f(x) , y) }$ instead of ${L(q,p)}$ since $q(|x) = f(x)$ and $ p(|x) = y$. Therefore, the loss evaluated on one observation gives us:
+We write ${L(f(x) , y) }$ instead of ${L(q,p)}$ since $q(|x) = f(x)$ and $ p(|x) = y$, once it has been "one hot encoded". Therefore, the loss evaluated on one observation gives us:
 \begin{equation}
 \end{equation}
 
@@ -82,7 +82,7 @@ A quick look at the function $f : x \mapsto - log(x) $ give a good insight on ho
 \begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{crossentropy_1d.png}
-    \caption{Impact of the probability of the real class on the loss}
+    \caption{Impact of the estimated probability of the real class on the loss}
     \label{fig:crossentropy_1d}
 \end{figure}
 \newpage
